@@ -1,0 +1,38 @@
+﻿@using test2.Models
+@model Product
+
+
+<h1>جزئیات کالا با شناسه </h1>
+<p>@Model.Id</p>
+<form asp-action="Edit" method="post">
+
+    <div class="mb-3">
+        <label for="productid" class="form-label">شناسه کالا</label>
+        <input type="text" class="form-control" id="productid" readonly value="@Model.Id" name="Id">
+    </div>
+    <div class="mb-3">
+        <label for="producttitle" class="form-label">نام کالا </label>
+        <input type="text" class="form-control" id="producttitle" placeholder="فارسی وارد کنید" value="@Model.Name" name="Name">
+    </div>
+    <div class="mb-3">
+        <label for="productcount" class="form-label">قیمت </label>
+        <input type="text" class="form-control" id="productcount" placeholder="قیمت را وارد کنید" value="@Model.Price" name="Price">
+    </div>
+    <div class="mb-3">
+        <label for="Data" class="form-label">تاریخ تولید را وارد کنید </label>
+        <input type="date" class="form-control" id="Data" placeholder="" name="Date">
+    </div>
+    <div class="mb-3">
+        <label asp-for=CategoryID class="form-label">  </label>
+
+        <select asp-for="CategoryID" asp-items="@(new SelectList(ViewBag.namee,"Id","Name"))"></select>
+    </div>
+    <div class="mb-3">
+        <input type="submit" class="btn btn-success" value="ویرایش">
+
+        <a class="btn btn-light" asp-controller="Product" asp-action="product" style="background-color:#a2c9f1"> بازگشت به لیست </a>
+    </div>
+
+</form>
+
+

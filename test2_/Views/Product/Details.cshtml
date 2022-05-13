@@ -1,0 +1,39 @@
+﻿@using test2.Models
+@using test2_.Entit
+@model editttt
+
+<h1>جزئیات کالا با شناسه </h1>
+<p>@Model.product.Id </p>
+
+
+<div class="mb-3">
+    <label for="productid" class="form-label">شناسه کالا</label>
+    <input type="text" class="form-control" id="productid" readonly value="@Model.product.Id">
+</div>
+<div class="mb-3">
+    <label for="producttitle" class="form-label">نام کالا </label>
+    <input type="text" class="form-control" id="producttitle" readonly value="@Model.product.Name">
+</div>
+<div class="mb-3">
+    <label for="productprice" class="form-label">قیمت </label>
+    <input type="text" class="form-control" id="productprice" readonly value="@Model.product.Price">
+</div>
+<div class="mb-3">
+    <label for="productprice" class="form-label">تاریخ تولید </label>
+    <input type="text" class="form-control" id="productprice" readonly value="@Model.product.Date">
+</div>
+<div class="mb-3">
+    <label for="productprice" class="form-label">شخص ثبت کننده </label>
+    <input type="text" class="form-control" id="productprice" readonly value="@Model.product.User.Name">
+</div>
+<div class="mb-3">
+    <label for="productprice" class="form-label">دسته بندی </label>
+    <input type="text" class="form-control" id="productprice" readonly value="@Model.product.Category.Name">
+</div>
+
+<div class="mb-3">
+    <a class="btn btn-light" style="background-color:#a2c9f1" asp-controller="Product" asp-action="product"> بازگشت به لیست </a>
+</div>
+
+
+
